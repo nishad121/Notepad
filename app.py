@@ -8,6 +8,8 @@ def fetch_weather(location, api_key):
     if response.status_code == 200:
         return response.json()
     else:
+        # Print the response for debugging
+        st.error(f"Error: {response.status_code}, {response.json().get('message')}")
         return None
 
 # Main function for the Streamlit app
